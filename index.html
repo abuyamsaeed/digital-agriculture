@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f1">
+  <title>الزراعة الرقمية | دفتر البستان</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="الزراعة الرقمية - الصفحة الرئيسية">
+      <span class="brand-mark" aria-hidden="true">ا</span>
+      <span><strong>الزراعة الرقمية</strong><small>دفتر البستان</small></span>
+    </a>
+    <div class="topbar-note"><span class="status-dot"></span> أداة تقديرية لمزارعي الزيتون</div>
+  </header>
+
+  <main class="page-shell">
+    <section class="intro">
+      <div>
+        <p class="eyebrow">من أرض حلب… إلى قرار أوضح</p>
+        <h1>خطّط لموسمك، <span>واحسبها بثقة.</span></h1>
+        <p class="intro-copy">سجّل بيانات بستانك، قدّر احتياجاته وتكاليفه، واحتفظ بتقرير واضح يمكنك طباعته.</p>
+      </div>
+      <div class="season-chip"><span aria-hidden="true">✳</span> أداة تخطيط موسمية</div>
+    </section>
+
+    <div class="workspace">
+      <section class="form-panel" aria-labelledby="form-title">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">بياناتك تبقى على جهازك</p>
+            <h2 id="form-title">ملف البستان</h2>
+          </div>
+          <span class="step-badge">١ — ٤</span>
+        </div>
+
+        <form id="orchard-form">
+          <fieldset>
+            <legend><span class="legend-number">١</span> معلومات البستان</legend>
+            <div class="field-grid">
+              <label class="field field-wide">اسم البستان
+                <input name="orchardName" type="text" placeholder="مثال: بستان السنديان" required>
+              </label>
+              <label class="field">المنطقة / القرية
+                <input name="location" type="text" placeholder="مثال: عفرين" required>
+              </label>
+              <label class="field">اسم المزارع
+                <input name="farmer" type="text" placeholder="الاسم" required>
+              </label>
+              <label class="field">المساحة (دونم)
+                <input name="area" type="number" min="0.01" step="0.01" placeholder="10" required>
+              </label>
+              <label class="field">عدد الأشجار
+                <input name="trees" type="number" min="1" step="1" placeholder="250" required>
+              </label>
+              <label class="field field-wide">متوسط عمر الأشجار (سنة)
+                <input name="treeAge" type="number" min="0" step="1" placeholder="15" required>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend><span class="legend-number">٢</span> الإنتاج والأسعار</legend>
+            <div class="field-grid">
+              <label class="field">متوسط إنتاج الشجرة (كغ زيتون)
+                <input name="yieldPerTree" type="number" min="0" step="0.1" placeholder="20" required>
+              </label>
+              <label class="field">سعر بيع كيلو الزيتون
+                <input name="olivePrice" type="number" min="0" step="0.01" placeholder="0" required>
+              </label>
+              <label class="field field-wide">رمز العملة
+                <input name="currency" type="text" maxlength="12" value="ل.س" required>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend><span class="legend-number">٣</span> تقدير المياه</legend>
+            <p class="fieldset-hint">أدخل تقدير الاحتياج الموسمي والمطر الفعّال لبستانك بالملليمتر.</p>
+            <div class="field-grid">
+              <label class="field">احتياج المحصول الموسمي (مم)
+                <input name="waterDemand" type="number" min="0" step="1" placeholder="مثال: 450" required>
+              </label>
+              <label class="field">المطر الفعّال للموسم (مم)
+                <input name="effectiveRain" type="number" min="0" step="1" placeholder="مثال: 200" required>
+              </label>
+              <label class="field field-wide">كفاءة شبكة الري (%)
+                <input name="irrigationEfficiency" type="number" min="1" max="100" step="1" placeholder="مثال: 80" required>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend><span class="legend-number">٤</span> السماد والتكاليف</legend>
+            <p class="fieldset-hint">معدلات السماد لكل دونم وأسعار الوحدة حسب ما تعتمده في مزرعتك.</p>
+            <div class="field-grid">
+              <label class="field">آزوت N (كغ/دونم)
+                <input name="nitrogenRate" type="number" min="0" step="0.01" placeholder="0" required>
+              </label>
+              <label class="field">سعر كغ الآزوت
+                <input name="nitrogenPrice" type="number" min="0" step="0.01" placeholder="0" required>
+              </label>
+              <label class="field">فوسفور P₂O₅ (كغ/دونم)
+                <input name="phosphorusRate" type="number" min="0" step="0.01" placeholder="0" required>
+              </label>
+              <label class="field">سعر كغ الفوسفور
+                <input name="phosphorusPrice" type="number" min="0" step="0.01" placeholder="0" required>
+              </label>
+              <label class="field">بوتاسيوم K₂O (كغ/دونم)
+                <input name="potassiumRate" type="number" min="0" step="0.01" placeholder="0" required>
+              </label>
+              <label class="field">سعر كغ البوتاسيوم
+                <input name="potassiumPrice" type="number" min="0" step="0.01" placeholder="0" required>
+              </label>
+              <label class="field">تكلفة مياه الري (لكل م³)
+                <input name="waterPrice" type="number" min="0" step="0.01" placeholder="0" required>
+              </label>
+              <label class="field">أجور العمل (لكل دونم)
+                <input name="laborCost" type="number" min="0" step="0.01" placeholder="0" required>
+              </label>
+              <label class="field field-wide">تكاليف أخرى (لكل دونم)
+                <input name="otherCost" type="number" min="0" step="0.01" placeholder="0" required>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="form-actions">
+            <button class="button button-primary" type="submit">احسب مؤشرات البستان <span aria-hidden="true">←</span></button>
+            <button class="button button-secondary" type="button" id="save-button">حفظ بيانات البستان</button>
+            <button class="text-button" type="button" id="example-button">تحميل مثال توضيحي</button>
+          </div>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <aside class="results-column" aria-label="ملخص وتقرير البستان">
+        <section class="summary-panel">
+          <div class="panel-heading results-heading">
+            <div>
+              <p class="eyebrow">ملخص الموسم</p>
+              <h2>مؤشرات بستانك</h2>
+            </div>
+            <span class="leaf-icon" aria-hidden="true">❋</span>
+          </div>
+          <div id="empty-state" class="empty-state">
+            <span class="empty-illustration" aria-hidden="true">✳</span>
+            <h3>ابدأ ببيانات بستانك</h3>
+            <p>أدخل المعلومات والافتراضات، ثم اختر «احسب مؤشرات البستان» لعرض تقديرات الموسم.</p>
+          </div>
+          <div id="results" class="results" hidden>
+            <div class="orchard-facts">
+              <p class="report-kicker">تقرير الموسم الزراعي</p>
+              <h3 id="report-orchard-name"></h3>
+              <p><span id="report-location"></span> · المزارع: <span id="report-farmer"></span></p>
+              <p><span id="report-area"></span> دونم · <span id="report-trees"></span> شجرة · العمر: <span id="report-age"></span> سنة</p>
+            </div>
+            <div class="profit-card">
+              <span>صافي الربح التقديري</span>
+              <strong id="net-profit">—</strong>
+              <small id="profit-caption">بعد خصم التكاليف المدخلة</small>
+            </div>
+            <div class="metric-grid">
+              <article class="metric-card">
+                <span class="metric-icon water-icon" aria-hidden="true">≈</span>
+                <span class="metric-label">مياه الري الموسمية</span>
+                <strong id="water-volume">—</strong>
+                <small>متر مكعب للبستان</small>
+              </article>
+              <article class="metric-card">
+                <span class="metric-icon fertilizer-icon" aria-hidden="true">✳</span>
+                <span class="metric-label">إجمالي السماد</span>
+                <strong id="fertilizer-total">—</strong>
+                <small>كغ من العناصر الثلاثة</small>
+              </article>
+              <article class="metric-card">
+                <span class="metric-icon harvest-icon" aria-hidden="true">◉</span>
+                <span class="metric-label">إنتاج الزيتون المقدر</span>
+                <strong id="harvest-total">—</strong>
+                <small>كغ للموسم</small>
+              </article>
+              <article class="metric-card">
+                <span class="metric-icon cost-icon" aria-hidden="true">↗</span>
+                <span class="metric-label">إجمالي التكاليف</span>
+                <strong id="cost-total">—</strong>
+                <small>بالعملة المدخلة</small>
+              </article>
+            </div>
+            <div class="detail-list">
+              <div><span>افتراض المياه: احتياج / مطر فعّال / كفاءة</span><strong id="water-assumptions">—</strong></div>
+              <div><span>الإنتاج والسعر: كغ/شجرة · سعر الكيلو</span><strong id="yield-assumptions">—</strong></div>
+              <div><span>معدلات السماد (N · P₂O₅ · K₂O) كغ/دونم</span><strong id="fertilizer-assumptions">—</strong></div>
+              <div><span>أسعار السماد (N · P₂O₅ · K₂O) لكل كغ</span><strong id="fertilizer-price-assumptions">—</strong></div>
+              <div><span>تكاليف الوحدة: الماء / العمل / أخرى</span><strong id="cost-assumptions">—</strong></div>
+              <div><span>الإيرادات المتوقعة</span><strong id="revenue-total">—</strong></div>
+              <div><span>تكلفة الأسمدة</span><strong id="fertilizer-cost">—</strong></div>
+              <div><span>تكلفة مياه الري</span><strong id="water-cost">—</strong></div>
+              <div><span>العمل والتكاليف الأخرى</span><strong id="operating-cost">—</strong></div>
+              <div><span>حصة الشجرة من صافي الربح</span><strong id="profit-per-tree">—</strong></div>
+            </div>
+            <div class="model-note">
+              <strong>كيف حُسبت التقديرات؟</strong>
+              <p>صافي ماء الري = (احتياج المحصول − المطر الفعّال) ÷ كفاءة الري. حجم الماء محسوب على مساحة الدونم (١٬٠٠٠ م²). الإنتاج = عدد الأشجار × متوسط إنتاج الشجرة. الربح = الإيرادات − التكاليف المدخلة.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="report-panel">
+          <div class="report-icon" aria-hidden="true">▤</div>
+          <div class="report-copy">
+            <h3>تقرير واضح، جاهز للطباعة</h3>
+            <p>ملخص بيانات البستان والحسابات في صفحة واحدة.</p>
+          </div>
+          <button class="button button-print" type="button" id="print-button" disabled>طباعة التقرير <span aria-hidden="true">↗</span></button>
+        </section>
+        <p class="disclaimer">هذه أداة حسابية للتخطيط وليست بديلاً عن تحليل التربة أو استشارة مهندس زراعي. دقة النتائج تعتمد على دقة البيانات والأسعار التي تدخلها.</p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer"><span>الزراعة الرقمية</span><span>أرقام أقرب إلى واقع بستانك.</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
